@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+
+<body>
+
+<form action="./display" method="GET">
+  
+
+<div class="slidecontainer">
+	<p>What is the weight of your mail?</p>
+	<input type="range" step=".5" min=".5" max="13" value=".5" class="slider" id="weight" name="weight">
+	<br>Weight: <span id="demo"></span> oz<br>
+</div>
+
+<br><br>
+<p>What type of mail is it?</p>
+<select name="type">
+	<option value="Letters (Stamped)">Letters (Stamped)</option>
+	<option value="Letters (Metered)">Letters (Metered)</option>
+	<option value="Large Envelopes (Flats)">Large Envelopes (Flats)</option>
+	<option value="First-Class Package Service">First-Class Package Service</option>
+</select> 
+<br>
+
+<script>
+	var slider = document.getElementById("weight");
+	var output = document.getElementById("demo");
+	output.innerHTML = slider.value;
+
+	slider.oninput = function() {
+		output.innerHTML = this.value;
+	}
+</script>
+  
+<br><br>
+<button type="submit">Submit</button>
+
+</form>
+
+</body>
+</html>
