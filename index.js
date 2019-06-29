@@ -35,7 +35,7 @@ express()
     axios.get(urll)
     .then(response => { 
         console.log(response.data);
-        var params = {urll: urll, html: 'test'};
+        var params = {urll: urll, html: response.data};
   	     res.render('pages/display', params);
     })
     .catch(error => {
