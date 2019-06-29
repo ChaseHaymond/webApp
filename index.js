@@ -41,7 +41,7 @@ express()
 
 
 function getHtml(url) {
-    var html;
+    var html = '';
     axios.get(url)
     .then(response => { 
         console.log(response.data);
