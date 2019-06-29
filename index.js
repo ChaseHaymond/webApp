@@ -8,44 +8,18 @@ express()
   .set('view engine', 'ejs')
   .get('/display', (req, res) => {
 
-  	// console.log(req.query.type);
-  	// console.log(req.query.weight);
 
   	res.locals.type = req.query.type;
 
-  	var type = req.query.type;
-  	var weight = req.query.weight;
+//  	var type = req.query.type;
+//  	var weight = req.query.weight;
 
-  	// console.log(type);
-  	// console.log(weight);
+//  	var params = {weight: weight, type: type, cost: cost};
+    
+    
+    var url = req.query.url;
 
-  	// var num1 = parseInt(req.query.num1);
-  	// var num2 = parseInt(req.query.num2);
-  	// var params = {answer: (num1 + num2)}
-
-  	var cost = 0;
-
-  	if (type == "Letters (Stamped)") 
-  	{
-  		cost = stampedLetter(weight);
-  	}
-  	else if (type == "Letters (Metered)") 
-  	{
-  		cost = meteredLetter(weight);
-  	}
-  	else if (type == "Large Envelopes (Flats)") 
-  	{
-  		cost = largeEnvalopes(weight);
-  	}
-  	else if (type == "First-Class Package Service")
-  	{
-  		cost = packages(weight);
-  	}
-
-  	console.log(cost);
-
-  	var params = {weight: weight, type: type, cost: cost};
-
+    var params = {url: url};
   	res.render('pages/display', params)
   	})
   .get('/', (req, res) => {
