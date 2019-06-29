@@ -51,8 +51,8 @@ function getHtml(url) {
         console.log(error);
     })
     
-    console.log("test");
-    console.log(html);
+//    console.log("test");
+//    console.log(html);
     
 }
 
