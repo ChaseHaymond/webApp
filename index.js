@@ -25,10 +25,10 @@ express()
     var html = getHtml(url);
     
     console.log('Begin');
-    console.log(html.data);
+    console.log(html.data.message);
     console.log('end');
 
-    var params = {url: url, html: html};
+    var params = {url: url, html: html.data.message};
   	res.render('pages/display', params)
   	})
   .get('/', (req, res) => {
