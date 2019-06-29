@@ -25,7 +25,7 @@ express()
     var html = getHtml(url);
     
     console.log('Begin');
-    console.log(html.data.message);
+    console.log(html);
     console.log('end');
 
     var params = {url: url, html: html};
