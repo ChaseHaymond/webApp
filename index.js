@@ -20,7 +20,7 @@ express()
 //  	var params = {weight: weight, type: type, cost: cost};
     
     
-    var urll = req.query.url;
+    var urll = req.query.enteredUrl;
     
     var html = getHtml(urll);
     
