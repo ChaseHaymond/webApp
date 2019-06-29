@@ -41,16 +41,19 @@ express()
 
 
 function getHtml(url) {
+    var html;
     axios.get(url)
     .then(response => { 
         console.log(response.data);
-        var test = response.data;
-        console.log("test");
-        console.log(test);
+        html = response.data;
     })
     .catch(error => {
         console.log(error);
     })
+    
+    console.log("test");
+    console.log(html);
+    
 }
 
 
