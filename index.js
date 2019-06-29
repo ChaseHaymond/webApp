@@ -41,9 +41,7 @@ express()
 
 
 function getHtml(url) {
-    
-    
-    return axios.get(url)
+    axios.get(url)
     .then(response => { 
         console.log(response.data);
         return generateSuccessHTMLOutput(response);
