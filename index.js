@@ -24,11 +24,11 @@ express()
     
     var html = getHtml(url);
     
-    console.log('Begin');
-    console.log(html);
-    console.log('end');
+//    console.log('Begin');
+//    console.log(html);
+//    console.log('end');
 
-    var params = {url: url, html: html};
+    var params = {url: url, html: 'test'};
   	res.render('pages/display', params)
   	})
   .get('/', (req, res) => {
@@ -44,23 +44,10 @@ function getHtml(url) {
     axios.get(url)
     .then(response => { 
         console.log(response.data);
-        return generateSuccessHTMLOutput(response);
     })
     .catch(error => {
         console.log(error);
-        return 'error getting HTML from entered URL';
     })
-}
-
-
-function generateSuccessHTMLOutput(response) {
-  return  '<h4>Result</h4>' + 
-          '<h5>Status:</h5> ' + 
-          '<pre>' + response.status + ' ' + response.statusText + '</pre>' +
-          '<h5>Headers:</h5>' + 
-          '<pre>' + JSON.stringify(response.headers, null, '\t') + '</pre>' + 
-          '<h5>Data:</h5>' + 
-          '<pre>' + JSON.stringify(response.data, null, '\t') + '</pre>'; 
 }
 
 
