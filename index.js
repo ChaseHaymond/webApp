@@ -45,7 +45,7 @@ function getHtml(url) {
     axios.get(url)
     .then(response => { 
         console.log(response.data);
-        html = response.data;
+        //html = response.data;
     })
     .catch(error => {
         console.log(error);
