@@ -28,7 +28,7 @@ express()
     console.log(html.data.message);
     console.log('end');
 
-    var params = {url: url, html: html.data.message};
+    var params = {url: url, html: html};
   	res.render('pages/display', params)
   	})
   .get('/', (req, res) => {
@@ -46,14 +46,24 @@ function getHtml(url) {
     return axios.get(url)
     .then(response => { 
         console.log(response.data);
-//        return response.data;
+        return generateSuccessHTMLOutput(response);
     })
     .catch(error => {
         console.log(error);
-//        return 'error getting HTML from entered URL';
+        return 'error getting HTML from entered URL';
     })
 }
 
+
+function generateSuccessHTMLOutput(response) {
+  return  '<h4>Result</h4>' + 
+          '<h5>Status:</h5> ' + 
+          '<pre>' + response.status + ' ' + response.statusText + '</pre>' +
+          '<h5>Headers:</h5>' + 
+          '<pre>' + JSON.stringify(response.headers, null, '\t') + '</pre>' + 
+          '<h5>Data:</h5>' + 
+          '<pre>' + JSON.stringify(response.data, null, '\t') + '</pre>'; 
+}
 
 
 
