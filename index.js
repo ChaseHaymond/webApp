@@ -15,19 +15,10 @@ express()
 
   	res.locals.type = req.query.type;
 
-//  	var type = req.query.type;
-//  	var weight = req.query.weight;
-
-//  	var params = {weight: weight, type: type, cost: cost};
     
     
     var urll = req.query.enteredUrl;
     
-    //var html = getHtml(urll);
-    
-//    console.log('Begin');
-//    console.log(html);
-//    console.log('end');
     
     
     
@@ -44,7 +35,8 @@ express()
   	     res.render('pages/display', params);
     })
     
-    
+    //https://blog.bitsrc.io/https-blog-bitsrc-io-how-to-perform-web-scraping-using-node-js-5a96203cb7cba
+    //https://dev.to/aurelkurtula/introduction-to-web-scraping-with-nodejs-9h2
     
     
     
