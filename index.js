@@ -22,9 +22,9 @@ express()
     
     var url = req.query.url;
     
-    getHttp(url);
+    var html = getHtml(url);
 
-    var params = {url: url};
+    var params = {url: url, html: html};
   	res.render('pages/display', params)
   	})
   .get('/', (req, res) => {
@@ -36,15 +36,17 @@ express()
 
 
 
-function getHttp(url) {
-	var data = ''
+function getHtml(url) {
+	var data;
     
     axios.get(url)
     .then(response => { 
         console.log(response.data);
+        data = response.data;
     })
     .catch(error => {
         console.log(error);
+        data = 'error getting HTML from entered URL';
     })
     
 	return data;
