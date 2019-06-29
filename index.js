@@ -21,6 +21,8 @@ express()
     
     
     var url = req.query.url;
+    
+    getHttp(url);
 
     var params = {url: url};
   	res.render('pages/display', params)
@@ -34,8 +36,17 @@ express()
 
 
 
-function stampedLetter(url) {
-	var data = '';
+function getHttp(url) {
+	var data = ''
+    
+    axios.get(url)
+    .then(response => { 
+        console.log(response.data);
+    })
+    .catch(error => {
+        console.log(error);
+    })
+    
 	return data;
 }
 
