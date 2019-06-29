@@ -20,7 +20,7 @@ express()
 //  	var params = {weight: weight, type: type, cost: cost};
     
     
-    var url = req.query.url;
+    var urll = req.query.url;
     
     var html = getHtml(url);
     
@@ -28,7 +28,7 @@ express()
 //    console.log(html);
 //    console.log('end');
 
-    var params = {url: url, html: 'test'};
+    var params = {urll: urll, html: 'test'};
   	res.render('pages/display', params)
   	})
   .get('/', (req, res) => {
@@ -41,19 +41,13 @@ express()
 
 
 function getHtml(url) {
-    var html = '';
     axios.get(url)
     .then(response => { 
         console.log(response.data);
-        //html = response.data;
     })
     .catch(error => {
         console.log(error);
     })
-    
-//    console.log("test");
-//    console.log(html);
-    
 }
 
 
