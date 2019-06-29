@@ -37,19 +37,17 @@ express()
 
 
 function getHtml(url) {
-	var data;
+    
     
     axios.get(url)
     .then(response => { 
         console.log(response.data);
-        data = response.data;
+        return response.data;
     })
     .catch(error => {
         console.log(error);
-        data = 'error getting HTML from entered URL';
+        return 'error getting HTML from entered URL';
     })
-    
-	return data;
 }
 
 
