@@ -11,6 +11,7 @@ express()
   .set('view engine', 'ejs')
   .get('/display', (req, res) => {
 
+    console.log("----------------------------START---------------------------------------");
 
   	res.locals.type = req.query.type;
 
@@ -30,6 +31,7 @@ express()
 
     var params = {urll: urll, html: 'test'};
   	res.render('pages/display', params)
+    console.log("----------------------------END-----------------------------------------");
   	})
   .get('/', (req, res) => {
 
