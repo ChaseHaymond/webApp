@@ -23,6 +23,10 @@ express()
     var url = req.query.url;
     
     var html = getHtml(url);
+    
+    console.log('Begin');
+    console.log(html);
+    console.log('end');
 
     var params = {url: url, html: html};
   	res.render('pages/display', params)
