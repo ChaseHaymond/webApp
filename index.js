@@ -22,7 +22,7 @@ express()
     
     var urll = req.query.url;
     
-    var html = getHtml(url);
+    var html = getHtml(urll);
     
 //    console.log('Begin');
 //    console.log(html);
