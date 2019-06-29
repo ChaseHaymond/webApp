@@ -29,9 +29,8 @@ express()
 //    console.log(html);
 //    console.log('end');
 
-    var params = {urll: urll, html: 'test'};
-  	res.render('pages/display', params)
-    console.log("----------------------------END-----------------------------------------");
+//    var params = {urll: urll, html: 'test'};
+//  	res.render('pages/display', params)
   	})
   .get('/', (req, res) => {
 
@@ -46,9 +45,13 @@ function getHtml(urlll) {
     axios.get(urlll)
     .then(response => { 
         console.log(response.data);
+        var params = {urll: url, html: 'test'};
+  	     res.render('pages/display', params);
     })
     .catch(error => {
         console.log(error);
+        var params = {urll: url, html: 'test'};
+  	     res.render('pages/display', params);
     })
 }
 
