@@ -23,14 +23,34 @@ express()
     
     var urll = req.query.enteredUrl;
     
-    var html = getHtml(urll);
+    //var html = getHtml(urll);
     
 //    console.log('Begin');
 //    console.log(html);
 //    console.log('end');
+    
+    
+    
+    
+    axios.get(urll)
+    .then(response => { 
+        console.log(response.data);
+        var params = {urll: urll, html: 'test'};
+  	     res.render('pages/display', params);
+    })
+    .catch(error => {
+        console.log(error);
+        var params = {urll: urll, html: 'test'};
+  	     res.render('pages/display', params);
+    })
+    
+    
+    
+    
+    
 
 //    var params = {urll: urll, html: 'test'};
-//  	res.render('pages/display', params)
+//  	res.render('pages/display', params);
   	})
   .get('/', (req, res) => {
 
@@ -45,13 +65,9 @@ function getHtml(urlll) {
     axios.get(urlll)
     .then(response => { 
         console.log(response.data);
-        var params = {urll: url, html: 'test'};
-  	     res.render('pages/display', params);
     })
     .catch(error => {
         console.log(error);
-        var params = {urll: url, html: 'test'};
-  	     res.render('pages/display', params);
     })
 }
 
