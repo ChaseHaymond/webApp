@@ -22,11 +22,25 @@ express()
     
     axios.get(urll)
     .then(response => { 
-        console.log(response.data);
+        // console.log(response.data);
         //var params = {urll: urll, html: response.data};
         //var params = {urll: urll, html: cheerio.load(response.data)};
-        var html = cheerio.load(response.data);
-        var params = {urll: urll, html: html};
+        let getData = html => {
+          data = [];
+          const $ = cheerio.load(html);
+
+          $('h1').each((i, elem) => {
+            data.push({
+              title : $(elem).text()
+            });
+          });
+          console.log(data)
+        }
+
+        getData(response.data);
+
+
+        var params = {urll: urll, html: response.data};
   	     res.render('pages/display', params);
     })
     .catch(error => {
