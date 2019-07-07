@@ -38,7 +38,7 @@ express()
 
 
 
-          var params = {urll: urll, html: data.data};
+          var params = {urll: urll, html: data.title};
           res.render('pages/display', params);
         }
 
