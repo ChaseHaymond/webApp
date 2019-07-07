@@ -23,7 +23,8 @@ express()
     axios.get(urll)
     .then(response => { 
         console.log(response.data);
-        var params = {urll: urll, html: cheerio.load(response.data)};
+        var params = {urll: urll, html: response.data};
+        //var params = {urll: urll, html: cheerio.load(response.data)};
   	     res.render('pages/display', params);
     })
     .catch(error => {
