@@ -35,13 +35,18 @@ express()
             });
           });
           console.log(data)
+
+
+
+          var params = {urll: urll, html: data};
+          res.render('pages/display', params);
         }
 
         getData(response.data);
 
 
-        var params = {urll: urll, html: response.data};
-  	     res.render('pages/display', params);
+        // var params = {urll: urll, html: response.data};
+  	     // res.render('pages/display', params);
     })
     .catch(error => {
         console.log(error);
