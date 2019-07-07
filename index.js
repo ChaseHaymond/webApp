@@ -36,6 +36,7 @@ express()
               //Date : $(elem).find('strong').attr("class": "fullname show-popup-with-id u-textTruncate"),
               //Tweet : $(elem).text()
             });
+            data.push('<br>');
           });
           console.log("HERE--------------------------------HERE");
           console.log(data)
