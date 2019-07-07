@@ -29,7 +29,7 @@ express()
           data = [];
           const $ = cheerio.load(html);
 
-          $('p.TweetTextSize TweetTextSize--normal js-tweet-text tweet-text').each((i, elem) => {
+          $('p.TweetTextSize').each((i, elem) => {
             data.push({
               text: $(elem).text()
               //Author : $(elem).find('strong').attr("fullname show-popup-with-id u-textTruncate").text()
