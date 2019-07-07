@@ -29,9 +29,11 @@ express()
           data = [];
           const $ = cheerio.load(html);
 
-          $('h1').each((i, elem) => {
+          $('div[class=".content"]').each((i, elem) => {
             data.push({
-              title : $(elem).text()
+              Author : $(elem).find('strong').attr("class": "fullname show-popup-with-id u-textTruncate").text()
+              //Date : $(elem).find('strong').attr("class": "fullname show-popup-with-id u-textTruncate"),
+              //Tweet : $(elem).text()
             });
           });
           console.log("HERE--------------------------------HERE");
