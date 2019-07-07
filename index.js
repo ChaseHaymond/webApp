@@ -39,7 +39,7 @@ express()
 
           var str = JSON.stringify(data);
 
-          var params = {urll: urll, html: var};
+          var params = {urll: urll, html: str};
           res.render('pages/display', params);
         }
 
