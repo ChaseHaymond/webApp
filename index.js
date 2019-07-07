@@ -42,7 +42,7 @@ express()
           console.log(data);
 
 
-          fs.writeFile('stuff.json', 
+          fs.writeFile('tweetData.json', 
               JSON.stringify(data, null, 4), 
               (err)=> console.log('File successfully written!'))
 
