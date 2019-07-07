@@ -36,12 +36,17 @@ express()
               //Date : $(elem).find('strong').attr("class": "fullname show-popup-with-id u-textTruncate"),
               //Tweet : $(elem).text()
             });
-            data.push('<br>');
           });
           console.log("HERE--------------------------------HERE");
-          console.log(data)
+          console.log(data);
+
+
+          fs.writeFile('stuff.json', 
+              JSON.stringify(data, null, 4), 
+              (err)=> console.log('File successfully written!'))
 
           var str = JSON.stringify(data);
+
 
           var params = {urll: urll, html: str};
           res.render('pages/display', params);
