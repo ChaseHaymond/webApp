@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path');
 const axios = require('axios');
 const cheerio = require('cheerio');
-var Promise = require('promise');
 
 const PORT = process.env.PORT || 5000
 
@@ -30,9 +29,9 @@ express()
           data = [];
           const $ = cheerio.load(html);
 
-          $('.ProfileTweet').each((i, elem) => {
+          $('.TweetTextSize TweetTextSize--normal js-tweet-text tweet-text').each((i, elem) => {
             data.push({
-              user: $(elem).attr('data-screen-name')
+              text: $(elem).text()
               //Author : $(elem).find('strong').attr("fullname show-popup-with-id u-textTruncate").text()
               //Date : $(elem).find('strong').attr("class": "fullname show-popup-with-id u-textTruncate"),
               //Tweet : $(elem).text()
