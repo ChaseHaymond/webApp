@@ -34,6 +34,7 @@ express()
               title : $(elem).text()
             });
           });
+          console.log("HERE--------------------------------HERE");
           console.log(data)
 
 
