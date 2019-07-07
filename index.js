@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const axios = require('axios');
 const cheerio = require('cheerio');
+cosnt fs = require('fs');
 
 const PORT = process.env.PORT || 5000
 
@@ -20,29 +21,21 @@ express()
     var urll = req.query.enteredUrl;
     
     
-    
-    
-    
     axios.get(urll)
     .then(response => { 
         console.log(response.data);
-        var params = {urll: urll, html: response.data};
+        var params = {urll: urll, html: cheerio.load(response.data)};
   	     res.render('pages/display', params);
     })
     .catch(error => {
         console.log(error);
-        var params = {urll: urll, html: 'test'};
+        var params = {urll: urll, html: 'Error'};
   	     res.render('pages/display', params);
     })
     
     //https://blog.bitsrc.io/https-blog-bitsrc-io-how-to-perform-web-scraping-using-node-js-5a96203cb7cba
     //https://dev.to/aurelkurtula/introduction-to-web-scraping-with-nodejs-9h2
     
-    
-    
-
-//    var params = {urll: urll, html: 'test'};
-//  	res.render('pages/display', params);
   	})
   .get('/', (req, res) => {
 
