@@ -37,9 +37,9 @@ express()
           console.log("HERE--------------------------------HERE");
           console.log(data)
 
+          var str = JSON.stringify(data);
 
-
-          var params = {urll: urll, html: data.text};
+          var params = {urll: urll, html: var};
           res.render('pages/display', params);
         }
 
