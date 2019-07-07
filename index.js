@@ -31,7 +31,7 @@ express()
 
           $('div[class=".content"]').each((i, elem) => {
             data.push({
-              Author : $(elem).find('strong').attr("class": "fullname show-popup-with-id u-textTruncate").text()
+              Author : $(elem).find('strong').attr("fullname show-popup-with-id u-textTruncate").text()
               //Date : $(elem).find('strong').attr("class": "fullname show-popup-with-id u-textTruncate"),
               //Tweet : $(elem).text()
             });
