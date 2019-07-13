@@ -41,6 +41,10 @@ express()
           // console.log("HERE--------------------------------HERE");
           // console.log(data);
 
+          do {
+          	var content = fs.readFileSync("tweetData.json");
+          } while (content.length() < 1);
+
 
           fs.writeFile('tweetData.json', 
               JSON.stringify(data, null, 4), 
