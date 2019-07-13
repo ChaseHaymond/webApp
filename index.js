@@ -49,8 +49,14 @@ express()
 
           var str = JSON.stringify(data);
 
-          var obj = JSON.parse(str);
-console.log("text", obj.text);
+          var strLines = str.split("\n");
+
+          for(var i in strLines) {
+          	var obj = JSON.parse(strLines[i]);
+          	console.log("text", obj.text);
+          }
+
+     
 
           var params = {urll: urll, html: str};
           res.render('pages/display', params);
