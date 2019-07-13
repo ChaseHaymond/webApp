@@ -51,9 +51,9 @@ express()
 
 console.log("\n *STARTING* \n");
 // Define to JSON type
-//var jsonContent = JSON.parse(data);
+var jsonContent = JSON.parse(str);
 // Get Value from JSON
-console.log("text:", data.text);
+console.log("text:", jsonContent.text);
 console.log("\n *EXIT* \n");
 
           var params = {urll: urll, html: str};
