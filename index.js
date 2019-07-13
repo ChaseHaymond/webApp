@@ -50,7 +50,7 @@ express()
           var str = JSON.stringify(data);
 
           var obj = JSON.parse(str);
-console.log("key", obj.key);
+console.log("text", obj.text);
 
           var params = {urll: urll, html: str};
           res.render('pages/display', params);
