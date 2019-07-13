@@ -41,18 +41,20 @@ express()
           // console.log("HERE--------------------------------HERE");
           // console.log(data);
 
+
           fs.writeFile('tweetData.json', 
               JSON.stringify(data, null, 4), 
               (err)=> console.log('File successfully written!'))
 
-          var content = fs.readFileSync("tweetData.json");
-          do {
-          	content = fs.readFileSync("tweetData.json");
-          } while (content.length() < 1);
 
           var str = JSON.stringify(data);
 
-          var params = {urll: urll, html: content};
+          var jsonContent = JSON.parse(str);
+          console.log("#####################################################");
+          console.log("Text:", jsonContent.text);
+          console.log("#####################################################");
+
+          var params = {urll: urll, html: str};
           res.render('pages/display', params);
         }
 
@@ -92,11 +94,11 @@ function getHtml(urlll) {
 }
 
 function readFile() {
-	// var fs = require("fs");
-	console.log("\n *START* \n");
-	var content = fs.readFileSync("tweetData.json");
-	console.log("Output Content : \n"+ content);
-	console.log("\n *EXIT* \n");
+// var fs = require("fs");
+console.log("\n *START* \n");
+var content = fs.readFileSync("tweetData.json");
+console.log("Output Content : \n"+ content);
+console.log("\n *EXIT* \n");
 }
 
 
