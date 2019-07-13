@@ -49,13 +49,6 @@ express()
 
           var str = JSON.stringify(data);
 
-console.log("\n *STARTING* \n");
-// Define to JSON type
-var jsonContent = JSON.parse(str);
-// Get Value from JSON
-console.log("text:", jsonContent.text);
-console.log("\n *EXIT* \n");
-
           var params = {urll: urll, html: str};
           res.render('pages/display', params);
         }
@@ -96,14 +89,18 @@ function getHtml(urlll) {
 }
 
 function readFile() {
-	// console.log("\n *STARTING* \n");
-	// Get content from file
-	var contents = fs.readFileSync("tweetData.json");
-	// Define to JSON type
-	var jsonContent = JSON.parse(contents);
-	// Get Value from JSON
-	// console.log(JSON.stringify(contents));//"Text:", jsonContent.text);
-	// console.log("\n *EXIT* \n");
+	fs.readFile('./tweetData.json', 'utf8', (err, jsonString) => {
+	    if (err) {
+	        console.log("Error reading file from disk:", err)
+	        return
+	    }
+	    try {
+	        const customer = JSON.parse(jsonString)
+	        console.log("Tweet is:", customer.text) // => "Customer address is: Infinity Loop Drive"} catch(err) {
+	    } catch(err) {
+        	console.log('Error parsing JSON string:', err)
+    	}
+	})
 }
 
 
