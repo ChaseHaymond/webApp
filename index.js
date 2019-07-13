@@ -100,7 +100,7 @@ function readFile() {
 	// Define to JSON type
 	var jsonContent = JSON.parse(contents);
 	// Get Value from JSON
-	console.log(contents);//"Text:", jsonContent.text);
+	console.log(JSON.stringify(contents));//"Text:", jsonContent.text);
 	console.log("\n *EXIT* \n");
 }
 
