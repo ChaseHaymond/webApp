@@ -96,7 +96,7 @@ function getHtml(urlll) {
 function readFile() {
 	console.log("\n *STARTING* \n");
 	// Get content from file
-	var content = fs.readFileSync("tweetData.json");
+	var contents = fs.readFileSync("tweetData.json");
 	// Define to JSON type
 	var jsonContent = JSON.parse(contents);
 	// Get Value from JSON
