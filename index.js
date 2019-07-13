@@ -43,7 +43,7 @@ express()
 
 
           fs.writeFile('tweetData.json', 
-              JSON.stringify(data, null, 4), 
+              JSON.stringify(data), 
               (err)=> readFile())//console.log('File successfully written!'))
 
 
