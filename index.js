@@ -44,16 +44,23 @@ express()
           var jsonText;
           fs.writeFile('tweetData.json', 
               JSON.stringify(data, null, 4), 
-              (err)=> (jsonText = readFile(res)),
-              res.render('pages/display', jsonText))//console.log('File successfully written!'))
+              (err)=> (jsonText = function readFile() {
+				// var fs = require("fs");
+				//console.log("\n *START* \n");
+				var content = fs.readFileSync("tweetData.json");
+				//console.log("Output Content : \n"+ content);
+				//console.log("\n *EXIT* \n");
+				return content;
+				}
+              ))//console.log('File successfully written!'))
 
 
           var str = JSON.stringify(data);
-// console.log('##############################################');
-// console.log(jsonText);
-// console.log('##############################################');
-          // var params = {urll: urll, html: jsonText};
-          // res.render('pages/display', params);
+console.log('##############################################');
+console.log(jsonText);
+console.log('##############################################');
+          var params = {urll: urll, html: jsonText};
+          res.render('pages/display', params);
         }
 
         getData(response.data);
@@ -91,14 +98,14 @@ function getHtml(urlll) {
     })
 }
 
-function readFile(res) {
-	// var fs = require("fs");
-	//console.log("\n *START* \n");
-	var content = fs.readFileSync("tweetData.json");
-	//console.log("Output Content : \n"+ content);
-	//console.log("\n *EXIT* \n");
-	return content;
-}
+// function readFile(res) {
+// 	// var fs = require("fs");
+// 	//console.log("\n *START* \n");
+// 	var content = fs.readFileSync("tweetData.json");
+// 	//console.log("Output Content : \n"+ content);
+// 	//console.log("\n *EXIT* \n");
+// 	return content;
+// }
 
 
 
