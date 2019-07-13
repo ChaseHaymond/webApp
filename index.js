@@ -49,6 +49,8 @@ express()
 
           var str = JSON.stringify(data);
 
+          console.log("str:", str);
+
           // var jsonContent = JSON.parse(data);
           // console.log("#####################################################");
           // console.log("text", jsonContent.text);
@@ -94,14 +96,14 @@ function getHtml(urlll) {
 }
 
 function readFile() {
-	console.log("\n *STARTING* \n");
+	// console.log("\n *STARTING* \n");
 	// Get content from file
 	var contents = fs.readFileSync("tweetData.json");
 	// Define to JSON type
 	var jsonContent = JSON.parse(contents);
 	// Get Value from JSON
-	console.log(JSON.stringify(contents));//"Text:", jsonContent.text);
-	console.log("\n *EXIT* \n");
+	// console.log(JSON.stringify(contents));//"Text:", jsonContent.text);
+	// console.log("\n *EXIT* \n");
 }
 
 
