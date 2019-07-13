@@ -50,7 +50,7 @@ express()
 				var content = fs.readFileSync("tweetData.json");
 				//console.log("Output Content : \n"+ content);
 				//console.log("\n *EXIT* \n");
-				jsonText =  content;
+				jsonText = content;
 				}
               ))//console.log('File successfully written!'))
 
