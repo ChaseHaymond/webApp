@@ -42,16 +42,10 @@ express()
           // console.log(data);
 
 
-          fs.writeFile('tweetData.txt', 
+          fs.writeFile('tweetData.json', 
               JSON.stringify(data, null, 4), 
-              (err)=> console.log('File successfully written!'))
+              (err)=> readFile())//console.log('File successfully written!'))
 
-
-          // var fs = require("fs");
-		  console.log("\n *START* \n");
-		  var content = fs.readFileSync("tweetData.txt");
-		  console.log("Output Content : \n"+ content);
-		  console.log("\n *EXIT* \n");
 
           var str = JSON.stringify(data);
 
@@ -92,6 +86,14 @@ function getHtml(urlll) {
     .catch(error => {
         console.log(error);
     })
+}
+
+function readFile() {
+	// var fs = require("fs");
+	console.log("\n *START* \n");
+	var content = fs.readFileSync("tweetData.json");
+	console.log("Output Content : \n"+ content);
+	console.log("\n *EXIT* \n");
 }
 
 
