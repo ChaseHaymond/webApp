@@ -12,7 +12,7 @@ express()
   .set('view engine', 'ejs')
   .get('/display', (req, res) => {
 
-    console.log("----------------------------START---------------------------------------");
+    console.log("----------------------------STARTT---------------------------------------");
 
   	res.locals.type = req.query.type;
 
