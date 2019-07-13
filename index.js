@@ -49,7 +49,7 @@ express()
 
           var str = JSON.stringify(data);
 
-          console.log("str:", str);
+          console.log("data:", data);
 
           // var jsonContent = JSON.parse(data);
           // console.log("#####################################################");
