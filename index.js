@@ -49,6 +49,9 @@ express()
 
           var str = JSON.stringify(data);
 
+          var obj = JSON.parse(str);
+console.log("key", obj.key);
+
           var params = {urll: urll, html: str};
           res.render('pages/display', params);
         }
@@ -89,18 +92,18 @@ function getHtml(urlll) {
 }
 
 function readFile() {
-	fs.readFile('./tweetData.json', 'utf8', (err, jsonString) => {
-	    if (err) {
-	        console.log("Error reading file from disk:", err)
-	        return
-	    }
-	    try {
-	        const customer = JSON.parse(jsonString)
-	        console.log("Tweet is:", customer.text) // => "Customer address is: Infinity Loop Drive"} catch(err) {
-	    } catch(err) {
-        	console.log('Error parsing JSON string:', err)
-    	}
-	})
+	// fs.readFile('./tweetData.json', 'utf8', (err, jsonString) => {
+	//     if (err) {
+	//         console.log("Error reading file from disk:", err)
+	//         return
+	//     }
+	//     try {
+	//         const customer = JSON.parse(jsonString)
+	//         console.log("Tweet is:", customer.text) // => "Customer address is: Infinity Loop Drive"} catch(err) {
+	//     } catch(err) {
+ //        	console.log('Error parsing JSON string:', err)
+ //    	}
+	// })
 }
 
 
