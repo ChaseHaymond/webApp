@@ -44,15 +44,15 @@ express()
 
           fs.writeFile('tweetData.json', 
               JSON.stringify(data, null, 4), 
-              (err)=> console.log('File successfully written!'))
+              (err)=> readFile())//console.log('File successfully written!'))
 
 
           var str = JSON.stringify(data);
 
-          var jsonContent = JSON.parse(data);
-          console.log("#####################################################");
-          console.log("text", jsonContent.text);
-          console.log("#####################################################");
+          // var jsonContent = JSON.parse(data);
+          // console.log("#####################################################");
+          // console.log("text", jsonContent.text);
+          // console.log("#####################################################");
 
           var params = {urll: urll, html: str};
           res.render('pages/display', params);
@@ -94,11 +94,14 @@ function getHtml(urlll) {
 }
 
 function readFile() {
-// var fs = require("fs");
-console.log("\n *START* \n");
-var content = fs.readFileSync("tweetData.json");
-console.log("Output Content : \n"+ content);
-console.log("\n *EXIT* \n");
+	console.log("\n *STARTING* \n");
+	// Get content from file
+	var content = fs.readFileSync("tweetData.json");
+	// Define to JSON type
+	var jsonContent = JSON.parse(contents);
+	// Get Value from JSON
+	console.log("Text:", jsonContent.text);
+	log("\n *EXIT* \n");
 }
 
 
