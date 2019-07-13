@@ -49,12 +49,12 @@ express()
 
           var str = JSON.stringify(data);
 
-          console.log("data:", data);
-
-          // var jsonContent = JSON.parse(data);
-          // console.log("#####################################################");
-          // console.log("text", jsonContent.text);
-          // console.log("#####################################################");
+console.log("\n *STARTING* \n");
+// Define to JSON type
+var jsonContent = JSON.parse(data);
+// Get Value from JSON
+console.log("text:", jsonContent.text);
+log("\n *EXIT* \n");
 
           var params = {urll: urll, html: str};
           res.render('pages/display', params);
