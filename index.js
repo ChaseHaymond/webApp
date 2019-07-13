@@ -50,15 +50,22 @@ express()
 				var content = fs.readFileSync("tweetData.json");
 				//console.log("Output Content : \n"+ content);
 				//console.log("\n *EXIT* \n");
+
+
+console.log('##############################################');
+console.log(content);
+console.log('##############################################');
+
+
 				jsonText = content;
 				}
               ))//console.log('File successfully written!'))
 
 
           var str = JSON.stringify(data);
-console.log('##############################################');
-console.log(jsonText);
-console.log('##############################################');
+// console.log('##############################################');
+// console.log(jsonText);
+// console.log('##############################################');
           var params = {urll: urll, html: jsonText};
           res.render('pages/display', params);
         }
