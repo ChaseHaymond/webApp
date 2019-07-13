@@ -48,7 +48,7 @@ express()
 
           var str = JSON.stringify(data);
 
-          var fs = require("fs");
+          // var fs = require("fs");
 		  console.log("\n *START* \n");
 		  var content = fs.readFileSync("tweetData.json");
 		  console.log("Output Content : \n"+ content);
