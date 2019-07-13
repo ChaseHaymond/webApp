@@ -51,7 +51,7 @@ express()
 
           var jsonContent = JSON.parse(str);
           console.log("#####################################################");
-          console.log("text:", jsonContent.text);
+          console.log("text", jsonContent.text);
           console.log("#####################################################");
 
           var params = {urll: urll, html: str};
