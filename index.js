@@ -54,7 +54,7 @@ console.log("\n *STARTING* \n");
 //var jsonContent = JSON.parse(data);
 // Get Value from JSON
 console.log("text:", data.text);
-log("\n *EXIT* \n");
+console.log("\n *EXIT* \n");
 
           var params = {urll: urll, html: str};
           res.render('pages/display', params);
