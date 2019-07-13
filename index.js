@@ -12,7 +12,7 @@ express()
   .set('view engine', 'ejs')
   .get('/display', (req, res) => {
 
-    console.log("----------------------------STARTT---------------------------------------");
+    console.log("----------------------------START---------------------------------------");
 
   	res.locals.type = req.query.type;
 
@@ -49,7 +49,7 @@ express()
 
           var str = JSON.stringify(data);
 
-          var jsonContent = JSON.parse(str);
+          var jsonContent = JSON.parse(data);
           console.log("#####################################################");
           console.log("text", jsonContent.text);
           console.log("#####################################################");
