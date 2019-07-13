@@ -101,7 +101,7 @@ function readFile() {
 	var jsonContent = JSON.parse(contents);
 	// Get Value from JSON
 	console.log("Text:", jsonContent.text);
-	log("\n *EXIT* \n");
+	console.log("\n *EXIT* \n");
 }
 
 
