@@ -44,10 +44,11 @@ express()
           var jsonText;
           fs.writeFile('tweetData.json', 
               JSON.stringify(data, null, 4), 
-              (err)=> (jsonText = readFile(res)))//console.log('File successfully written!'))
+              (err)=> (jsonText = readFile(res)),
+              res.render('pages/display', params))//console.log('File successfully written!'))
 
 
-          // var str = JSON.stringify(data);
+          var str = JSON.stringify(data);
 // console.log('##############################################');
 // console.log(jsonText);
 // console.log('##############################################');
@@ -96,9 +97,6 @@ function readFile(res) {
 	var content = fs.readFileSync("tweetData.json");
 	//console.log("Output Content : \n"+ content);
 	//console.log("\n *EXIT* \n");
-
-	var params = {urll: urll, html: content};
-	res.render('pages/display', params);
 	return content;
 }
 
