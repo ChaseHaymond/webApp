@@ -44,7 +44,7 @@ express()
           var jsonText;
           fs.writeFile('tweetData.json', 
               JSON.stringify(data, null, 4), 
-              (err)=> (jsonText = readFile())//console.log('File successfully written!'))
+              (err)=> (jsonText = readFile()))//console.log('File successfully written!'))
 
 
           var str = JSON.stringify(data);
