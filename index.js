@@ -42,14 +42,14 @@ express()
           // console.log(data);
 
 
-          fs.writeFile('tweetData.json', 
+          fs.writeFile('tweetData.txt', 
               JSON.stringify(data, null, 4), 
               (err)=> console.log('File successfully written!'))
 
 
           // var fs = require("fs");
 		  console.log("\n *START* \n");
-		  var content = fs.readFileSync("tweetData.json");
+		  var content = fs.readFileSync("tweetData.txt");
 		  console.log("Output Content : \n"+ content);
 		  console.log("\n *EXIT* \n");
 
