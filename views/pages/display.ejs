@@ -10,10 +10,10 @@
 <br>
 <script type="text/javascript">
 	var parsed = ""
-	for (var i = 0; i < html.length(); i++) {
+	for (var i in html) {
 		parsed += html[i] + "\n";
 	}
-	document.getElementById("demo").innerHTML = parsed;
+	document.getElementById("demo").innerHTML = html[0];
 </script>
     
     <p id="demo"></p>
