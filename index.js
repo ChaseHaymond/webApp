@@ -49,12 +49,12 @@ express()
 
           var str = JSON.stringify(data);
 
-          var strLines = str.split("\n");
+          var jsonStr = "{\"tweet\":" + str + "}";
 
-          for(var i in strLines) {
-          	var obj = JSON.parse(strLines[i]);
-          	console.log("text", obj.text);
-          }
+          var obj = JSON.parse(jsonStr);
+
+          console.log(obj.tweet[0].text);
+
 
      
 
