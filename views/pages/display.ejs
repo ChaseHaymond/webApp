@@ -9,10 +9,11 @@
     
 <br>
 <script type="text/javascript">
-	var parsed = ""
+	var parsed = "<%= ";
 	for (var i in html) {
 		parsed += html[i] + "\n";
 	}
+	parsed += " %>";
 	document.getElementById("demo").innerHTML = html[0];
 </script>
     
