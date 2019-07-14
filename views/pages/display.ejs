@@ -9,13 +9,16 @@
     
 <br>
 
-<script type="text/javascript">
-	for (var i = Things.length - 1; i >= 0; i--) {
 
-	}
-</script>
+<table>
+<% for(var i=0; i < html.length; i++) { %>
+   <tr>
+     <td><%= html[i] %></td>
+   </tr>
+<% } %>
+</table>
     
-<p> HTML: <br><br> <%= html.count() %> </p>
+<!-- <p> HTML: <br><br> <%= html %> </p> -->
 
 
 </body>
