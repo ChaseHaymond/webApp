@@ -53,7 +53,11 @@ express()
 
           var obj = JSON.parse(jsonStr);
 
-          console.log(obj.tweet[0].text);
+          for(var i in obj.tweet) {
+          	console.log(obj.tweet[i].text);
+          }
+
+          // console.log(obj.tweet[0].text);
 
 
      
