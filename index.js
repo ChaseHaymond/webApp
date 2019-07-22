@@ -28,9 +28,9 @@ express()
           data = [];
           const $ = cheerio.load(html);
 
-          $('p.TweetTextSize').each((i, elem) => {
+          $('div.js-tweet-text-container').each((i, elem) => {//$('p.TweetTextSize').each((i, elem) => {
             data.push({
-              text: $(elem).date()
+              text: $(elem).text()
               //Date : $(elem).find('strong').attr("class": "fullname show-popup-with-id u-textTruncate"),
             });
           });
