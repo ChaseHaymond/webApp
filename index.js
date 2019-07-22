@@ -25,11 +25,13 @@ express()
     .then(response => { 
 
         let getData = html => {
-          dateData = [];
+          
           const $ = cheerio.load(html);
 
 
           //DATE STUFF
+          dateData = [];
+
           $('a.tweet-timestamp').each((i, elem) => {//$('p.TweetTextSize').each((i, elem) => {
             dateData.push({
               date: $(elem).text()
@@ -38,15 +40,13 @@ express()
           });
 
           var dateStr = JSON.stringify(dateData);
-
           var jsonDateStr = "{\"date\":" + dateStr + "}"; //format the string
-
           var dateObj = JSON.parse(jsonDateStr); //turn it to json obj
 
 
 
 
-
+          data = [];
 
           $('div.js-tweet-text-container').each((i, elem) => {//$('p.TweetTextSize').each((i, elem) => {
             data.push({
@@ -62,9 +62,7 @@ express()
 
 
           var str = JSON.stringify(data);
-
           var jsonStr = "{\"tweet\":" + str + "}"; //format the string
-
           var obj = JSON.parse(jsonStr); //turn it to json obj
 
           var tweets = []
