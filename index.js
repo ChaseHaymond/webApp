@@ -30,8 +30,7 @@ express()
 
           $('p.TweetTextSize').each((i, elem) => {
             data.push({
-              text: $(elem).text(),
-              date: $(elem).date()
+              text: $(elem).text()
               //Date : $(elem).find('strong').attr("class": "fullname show-popup-with-id u-textTruncate"),
             });
           });
