@@ -69,7 +69,7 @@ express()
           for(var i in obj.tweet) {
           	//console.log(obj.tweet[i].text); //print out the tweets
           	tweets.push(obj.tweet[i].text);
-          	//tweets.push(dateObj.date[i].date);
+          	tweets.push(dateObj.date[i].date);
           }
 
 
