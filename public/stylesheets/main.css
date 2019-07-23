@@ -4,12 +4,6 @@ body {
     /*background-color: red;*/
 }
 
-h1 {
-  font-size:25em;
-  line-height:0.7em;
-}
-
-
 .header {
     background-color: rgb(247, 198, 16);
     border-style: solid;
