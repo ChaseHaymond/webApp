@@ -30,24 +30,32 @@ express()
 
           //image stuff
           pageName = [];
-          imageName = [];
+          imageSrc = [];
 
           //<img class="ProfileAvatar-image " src="https://pbs.twimg.com/profile_images/1150268408287698945/x4f3ITmx_400x400.png" alt="McDonald's">
           $('img.ProfileAvatar-image').each((i, elem) => {//$('p.TweetTextSize').each((i, elem) => {
-            imageName.push({
-            	name: $(elem).attr('alt'),
+            imageSrc.push({
              	picture: $(elem).attr('src')
+            });
+          });
+
+          var picStr = JSON.stringify(imageSrc);
+          var jsonPicStr = "{\"picture\":" + picStr + "}"; //format the string
+          var picObj = JSON.parse(jsonPicStr); //turn it to json obj
+
+          //Profile Name stuff
+          pageName = [];
+
+          //<img class="ProfileAvatar-image " src="https://pbs.twimg.com/profile_images/1150268408287698945/x4f3ITmx_400x400.png" alt="McDonald's">
+          $('img.ProfileAvatar-image').each((i, elem) => {//$('p.TweetTextSize').each((i, elem) => {
+            pageName.push({
+            	name: $(elem).attr('alt')
             });
           });
 
           var nameStr = JSON.stringify(pageName);
           var jsonNameStr = "{\"name\":" + nameStr + "}"; //format the string
           var nameObj = JSON.parse(jsonNameStr); //turn it to json obj
-
-          var picStr = JSON.stringify(imageName);
-          var jsonPicStr = "{\"picture\":" + picStr + "}"; //format the string
-          var picObj = JSON.parse(jsonPicStr); //turn it to json obj
-
 
           //DATE STUFF
           dateData = [];
