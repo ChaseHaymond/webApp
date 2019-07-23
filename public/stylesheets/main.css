@@ -46,6 +46,17 @@ background: #dddddd;
     margin: 0 auto;
     width: 600px;
 }
+.tableBox {
+    background-color: rgb(16, 181, 132);
+    border-style: solid;
+    border-width: thick;
+    border-color: rgb(0, 107, 165);
+    padding:0px 10px 10px 10px;
+    text-align: center;
+    /*vertical-align: middle;*/
+    margin: 0 auto;
+    width: 600px;
+}
 
 .boxLink {
     background-color: rgb(16, 181, 132);
