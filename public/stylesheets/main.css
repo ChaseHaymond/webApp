@@ -9,6 +9,7 @@ table {
     border-collapse: collapse;
     width: 100%;
     background-color: rgb(16, 181, 132);
+    outline-color: red;
 }
 
 td, th {
