@@ -32,7 +32,6 @@ express()
           imageSrc = [];
           pageName = [];
 
-          //<img class="ProfileAvatar-image " src="https://pbs.twimg.com/profile_images/1150268408287698945/x4f3ITmx_400x400.png" alt="McDonald's">
           $('img.ProfileAvatar-image').each((i, elem) => {//$('p.TweetTextSize').each((i, elem) => {
             imageSrc.push({
              	picture: $(elem).attr('src')
