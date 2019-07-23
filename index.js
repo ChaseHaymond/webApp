@@ -38,8 +38,13 @@ express()
               //Date : $(elem).find('strong').attr("class": "fullname show-popup-with-id u-textTruncate"),
             });
           });
+
+          var picStr = JSON.stringify(dateData);
+          var jsonPicStr = "{\"date\":" + picStr + "}"; //format the string
+          var picObj = JSON.parse(jsonPicStr); //turn it to json obj
+
 console.log("--------------------------------------------");
-          console.log(imageName);
+          console.log(picStr);
 console.log("--------------------------------------------");
 
 
