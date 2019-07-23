@@ -34,7 +34,7 @@ express()
 
           $('img.ProfileAvatar-image').each((i, elem) => {//$('p.TweetTextSize').each((i, elem) => {
             imageName.push({
-              //picture: $(elem).src()
+              picture: $(elem).attr('scr');
               //Date : $(elem).find('strong').attr("class": "fullname show-popup-with-id u-textTruncate"),
             });
           });
