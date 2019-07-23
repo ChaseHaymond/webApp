@@ -39,7 +39,7 @@ express()
             });
           });
 
-          var picStr = JSON.stringify(dateData);
+          var picStr = JSON.stringify(imageName);
           var jsonPicStr = "{\"date\":" + picStr + "}"; //format the string
           var picObj = JSON.parse(jsonPicStr); //turn it to json obj
 
