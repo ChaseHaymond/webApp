@@ -1,27 +1,78 @@
-.jumbotron {
-  background: #532F8C;
-  color: white;
-  padding-bottom: 80px; }
-  .jumbotron .btn-primary {
-    background: #845ac7;
-    border-color: #845ac7; }
-    .jumbotron .btn-primary:hover {
-      background: #7646c1; }
-  .jumbotron p {
-    color: #d9ccee;
-    max-width: 75%;
-    margin: 1em auto 2em; }
-  .navbar + .jumbotron {
-    margin-top: -20px; }
-  .jumbotron .lang-logo {
-    display: block;
-    background: #B01302;
-    border-radius: 50%;
-    overflow: hidden;
-    width: 100px;
-    height: 100px;
-    margin: auto;
-    border: 2px solid white; }
-    .jumbotron .lang-logo img {
-      max-width: 100%; }
 
+body {
+/*    background-color: rgb(112, 146, 190);*/
+    background-color: red;
+}
+
+
+.header {
+    background-color: rgb(247, 198, 16);
+    border-style: solid;
+    border-width: thick;
+    border-color: rgb(189, 66, 16);
+    height: 85px;
+}
+
+.box {
+    background-color: rgb(16, 181, 132);
+    border-style: solid;
+    border-width: thick;
+    border-color: rgb(0, 107, 165);
+    width: 200px;
+    padding:0px 10px 10px 10px;
+}
+
+.boxLink {
+    background-color: rgb(16, 181, 132);
+    border-style: solid;
+    border-width: thick;
+    border-color: rgb(0, 107, 165);
+    width: 200px;
+/*    height: 75px;*/
+    text-align: center;
+    vertical-align: middle;
+}
+
+.homeBoxLink {
+        background-color: rgb(16, 181, 132);
+    border-style: solid;
+    border-width: thick;
+    border-color: rgb(0, 107, 165);
+    width: 200px;
+    height: 75px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.center {
+/*
+    background-color: rgb(16, 181, 132);
+    border-style: solid;
+    border-width: thick;
+    border-color: rgb(0, 107, 165);
+*/
+    width: 400px;
+    
+}
+
+.homeTable {
+/*    padding:0px 100px 0px 100px;*/
+}
+
+.homeTr {
+    
+}
+
+.homeTd {
+      padding:0px 100px 0px 100px;
+}
+
+.headerTd {
+    padding:0px 200px 0px 200px;
+}
+
+table td{
+
+ /*padding:0px 100px 0px 100px;*/ /* top right bottom left */
+
+ }
