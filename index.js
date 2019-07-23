@@ -30,27 +30,22 @@ express()
 
           //image stuff
           imageSrc = [];
+          pageName = [];
 
           //<img class="ProfileAvatar-image " src="https://pbs.twimg.com/profile_images/1150268408287698945/x4f3ITmx_400x400.png" alt="McDonald's">
           $('img.ProfileAvatar-image').each((i, elem) => {//$('p.TweetTextSize').each((i, elem) => {
             imageSrc.push({
              	picture: $(elem).attr('src')
             });
+
+            pageName.push({
+            	name: $(elem).attr('alt')
+            });
           });
 
           var picStr = JSON.stringify(imageSrc);
           var jsonPicStr = "{\"picture\":" + picStr + "}"; //format the string
           var picObj = JSON.parse(jsonPicStr); //turn it to json obj
-
-          //Profile Name stuff
-          pageName = [];
-
-          //<img class="ProfileAvatar-image " src="https://pbs.twimg.com/profile_images/1150268408287698945/x4f3ITmx_400x400.png" alt="McDonald's">
-          $('img.ProfileAvatar-image').each((i, elem) => {//$('p.TweetTextSize').each((i, elem) => {
-            pageName.push({
-            	name: $(elem).attr('alt')
-            });
-          });
 
           var nameStr = JSON.stringify(pageName);
           var jsonNameStr = "{\"name\":" + nameStr + "}"; //format the string
