@@ -10,6 +10,7 @@ table {
     width: 100%;
     background-color: rgb(16, 181, 132);
     outline-color: red;
+    outline-width: thick;
 }
 
 td, th {
