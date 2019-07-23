@@ -23,6 +23,10 @@ tr:nth-child(even) {
 background: #dddddd;
 }
 
+.image{
+    height: 400px;
+    width: 400px;
+}
 
 .header {
     background-color: rgb(247, 198, 16);
