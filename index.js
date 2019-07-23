@@ -27,26 +27,26 @@ express()
         let getData = html => {
           
           const $ = cheerio.load(html);
+
           //image stuff
-          //<img class="ProfileAvatar-image" src="https://pbs.twimg.com/profile_images/1150268408287698945/x4f3ITmx_400x400.png" alt="McDonald's">
           pageName = [];
           imageName = [];
 
           $('img.ProfileAvatar-image').each((i, elem) => {//$('p.TweetTextSize').each((i, elem) => {
             imageName.push({
-              picture: $(elem).attr('src')
+            	name: $(elem).attr('src'),
+             	picture: $(elem).attr('alt')
               //Date : $(elem).find('strong').attr("class": "fullname show-popup-with-id u-textTruncate"),
             });
           });
 
+          var nameStr = JSON.stringify(pageName);
+          var jsonNameStr = "{\"name\":" + nameStr + "}"; //format the string
+          var nameObj = JSON.parse(jsonNameStr); //turn it to json obj
+
           var picStr = JSON.stringify(imageName);
-          var jsonPicStr = "{\"date\":" + picStr + "}"; //format the string
+          var jsonPicStr = "{\"picture\":" + picStr + "}"; //format the string
           var picObj = JSON.parse(jsonPicStr); //turn it to json obj
-
-console.log("--------------------------------------------");
-          console.log(picStr);
-console.log("--------------------------------------------");
-
 
 
           //DATE STUFF
@@ -55,7 +55,6 @@ console.log("--------------------------------------------");
           $('a.tweet-timestamp').each((i, elem) => {//$('p.TweetTextSize').each((i, elem) => {
             dateData.push({
               date: $(elem).text()
-              //Date : $(elem).find('strong').attr("class": "fullname show-popup-with-id u-textTruncate"),
             });
           });
 
@@ -64,14 +63,12 @@ console.log("--------------------------------------------");
           var dateObj = JSON.parse(jsonDateStr); //turn it to json obj
 
 
-
-
+          // tweet data
           data = [];
 
           $('div.js-tweet-text-container').each((i, elem) => {//$('p.TweetTextSize').each((i, elem) => {
             data.push({
               text: $(elem).text()
-              //Date : $(elem).find('strong').attr("class": "fullname show-popup-with-id u-textTruncate"),
             });
           });
 
@@ -93,7 +90,7 @@ console.log("--------------------------------------------");
           }
 
 
-          var params = {urll: urll, html: tweets};
+          var params = {urll: urll, html: tweets, picture: picObj.picture[0].picture, name: nameObj.name[0].name};
           res.render('pages/display', params);
         }
 
