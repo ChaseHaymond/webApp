@@ -8,6 +8,7 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    background-color: rgb(16, 181, 132);
 }
 
 td, th {
