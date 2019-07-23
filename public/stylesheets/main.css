@@ -22,7 +22,7 @@ body {
     padding:0px 10px 10px 10px;
     text-align: center;
     vertical-align: middle;
-    margin: auto 0;
+    display: inline-block;
     width: 600px;
 }
 
