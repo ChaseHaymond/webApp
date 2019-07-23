@@ -29,7 +29,6 @@ express()
           const $ = cheerio.load(html);
 
           //image stuff
-          pageName = [];
           imageSrc = [];
 
           //<img class="ProfileAvatar-image " src="https://pbs.twimg.com/profile_images/1150268408287698945/x4f3ITmx_400x400.png" alt="McDonald's">
