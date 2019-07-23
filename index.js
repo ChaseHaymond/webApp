@@ -32,11 +32,11 @@ express()
           pageName = [];
           imageName = [];
 
+          //<img class="ProfileAvatar-image " src="https://pbs.twimg.com/profile_images/1150268408287698945/x4f3ITmx_400x400.png" alt="McDonald's">
           $('img.ProfileAvatar-image').each((i, elem) => {//$('p.TweetTextSize').each((i, elem) => {
             imageName.push({
-            	name: $(elem).attr('src'),
-             	picture: $(elem).attr('alt')
-              //Date : $(elem).find('strong').attr("class": "fullname show-popup-with-id u-textTruncate"),
+            	name: $(elem).attr('alt'),
+             	picture: $(elem).attr('src')
             });
           });
 
