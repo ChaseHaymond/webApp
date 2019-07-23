@@ -27,6 +27,21 @@ express()
         let getData = html => {
           
           const $ = cheerio.load(html);
+          //image stuff
+          //<img class="ProfileAvatar-image" src="https://pbs.twimg.com/profile_images/1150268408287698945/x4f3ITmx_400x400.png" alt="McDonald's">
+          pageName = [];
+          imageName = [];
+
+          $('img.ProfileAvatar-image').each((i, elem) => {//$('p.TweetTextSize').each((i, elem) => {
+            imageName.push({
+              picture: $(elem).src()
+              //Date : $(elem).find('strong').attr("class": "fullname show-popup-with-id u-textTruncate"),
+            });
+          });
+console.log("--------------------------------------------");
+          console.log(imageName);
+console.log("--------------------------------------------");
+
 
 
           //DATE STUFF
